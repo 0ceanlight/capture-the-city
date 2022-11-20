@@ -28,6 +28,10 @@ const Form = (props) => {
         },
         body: JSON.stringify({title: title, body: cont, longitude: long, latitude: lat})
       });
+      rawResponse["Access-Control-Allow-Origin"] = "*"
+      rawResponse["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+      rawResponse["Access-Control-Max-Age"] = "1000"
+      rawResponse["Access-Control-Allow-Headers"] = "X-Requested-With, Content-Type"
       const content = await rawResponse.json();
     };
 
